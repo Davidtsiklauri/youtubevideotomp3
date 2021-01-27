@@ -27,14 +27,19 @@
             color: white;
             padding: 3px 10px;
             border-radius: 4px;
+            transition: .5s ease-in;
+        }
+        .disabled {
+            opacity: .5;
+            pointer-events: none;
         }
     </style>
     <body>
         <div class="youtube-body">
             <img src="imgs/16.png" class="logo" />
             <div class="download">
-                <button class="btn" id="download">Download</button>
-                <button class="btn" id="downloadAll">Download All</button>
+                <button class="btn disabled" id="download">Download</button>
+                <button class="btn disabled" id="downloadAll">Download All</button>
             </div>
         </div>
     </body>

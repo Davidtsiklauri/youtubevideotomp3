@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "youtubeMusic",
     "description": "Download Music From Youtube Video",
-    "version": "1.0",
+    "version": "1.1",
     "icons": {
         "16": "imgs/32.png",
         "32": "./imgs/32.png",

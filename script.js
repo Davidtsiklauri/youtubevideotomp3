@@ -1,6 +1,10 @@
 
-document.getElementById("download").addEventListener("click", convertYoutubeVideoToMusic);
-document.getElementById("downloadAll").addEventListener("click", convertYoutubeVideoToMusic);
+const download = document.getElementById("download")
+const downloadAll = document.getElementById("downloadAll")
+
+download.addEventListener("click", convertYoutubeVideoToMusic);
+downloadAll.addEventListener("click", convertYoutubeVideoToMusic);
+
 
 const API ='https://y2mate.guru/api/convert';
 const YOUTUBE_REGEX = /http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/; 
@@ -22,6 +26,21 @@ function convertYoutubeVideoToMusic(e) {
         })
     });
 };
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    chrome.tabs.query({ lastFocusedWindow: true }, tabs => { 
+        for(const tab of tabs) {
+            if(tab.active && YOUTUBE_REGEX.test(tab.url)) {
+                download.classList.remove('disabled');
+            } 
+            else if(!tab.active && YOUTUBE_REGEX.test(tab.url)) {
+                downloadAll.classList.remove('disabled');
+            }
+        }
+    });
+});
+
 
 
 function makeRequestToApi(url) {

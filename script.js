@@ -1,6 +1,7 @@
 
 const download = document.getElementById("download")
 const downloadAll = document.getElementById("downloadAll")
+const pEl = document.querySelector('.not-supported');
 
 download.addEventListener("click", convertYoutubeVideoToMusic);
 downloadAll.addEventListener("click", convertYoutubeVideoToMusic);
@@ -31,6 +32,13 @@ function convertYoutubeVideoToMusic(e) {
 document.addEventListener('DOMContentLoaded', () => {
     chrome.tabs.query({ lastFocusedWindow: true }, tabs => { 
         for(const tab of tabs) {
+            if(tab.active && tab.url.startsWith('chrome')) {
+                download.remove();
+                downloadAll.remove();
+                pEl.classList.remove('not-supported');
+                console.log(pEl)
+                return;
+            }
             if(tab.active && YOUTUBE_REGEX.test(tab.url)) {
                 download.classList.remove('disabled');
             } 

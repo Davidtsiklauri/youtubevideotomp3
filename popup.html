@@ -33,6 +33,12 @@
             opacity: .5;
             pointer-events: none;
         }
+        .not-supported {
+            display: none;
+        }
+        p {
+            color: slategray;
+        }
     </style>
     <body>
         <div class="youtube-body">
@@ -40,6 +46,7 @@
             <div class="download">
                 <button class="btn disabled" id="download">Download</button>
                 <button class="btn disabled" id="downloadAll">Download All</button>
+                <p class="not-supported">Extension Is Not Supported Here</p>
             </div>
         </div>
     </body>

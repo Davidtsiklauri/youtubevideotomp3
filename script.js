@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 download.remove();
                 downloadAll.remove();
                 pEl.classList.remove('not-supported');
-                console.log(pEl)
                 return;
             }
             if(tab.active && YOUTUBE_REGEX.test(tab.url)) {

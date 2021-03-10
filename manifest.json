@@ -4,13 +4,13 @@
     "description": "Download Music From Youtube Video",
     "version": "1.1",
     "icons": {
-        "16": "imgs/32.png",
-        "32": "./imgs/32.png",
-        "48": "imgs/32.png",
-        "128": "imgs/32.png"
+        "16": "./assets/icons/32.png",
+        "32": "./assets/icons/32.png",
+        "48": "./assets/icons/32.png",
+        "128": "./assets/icons/32.png"
     },
     "browser_action": {
-        "default_icon": "imgs/32.png",
+        "default_icon": "./assets/icons/32.png",
         "default_popup": "popup.html"
     },
     "permissions": ["activeTab", "tabs","https://y2mate.guru/api/convert", "downloads"]
